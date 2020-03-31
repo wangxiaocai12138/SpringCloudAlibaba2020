@@ -1,0 +1,28 @@
+server:
+  port: 8888
+
+#feign 不作为服务注册进注册中心，只作为一个客户端的存在
+eureka:
+  client:
+    #表示是否将自己注册进EurekaService服务注册中心中，默认true
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://eureka7002.com:7002/eureka,http://eureka7001.com:7001/eureka/   #入驻集群地址
+#设置feign客户端超时时间（OpenFeign默认支持ribbon）
+#ribbon:
+  #指建立连接所用时间，适用于网络正常情况下，两端连接所用时间
+  #ReadTimeout: 3000
+  #指建立连接后从服务器读取到可用资源所用的时间
+  #ConnectTimeout: 3000
+
+
+#logging:
+ # level:
+    #feign日志以什么级别监控那个接口
+  #  com.springcloud.service.PaymentFeignService: debug
+
+
+#启动支持hystrix
+feign:
+  hystrix:
+    enabled: true
