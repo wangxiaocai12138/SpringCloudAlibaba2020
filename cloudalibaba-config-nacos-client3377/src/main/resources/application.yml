@@ -1,0 +1,5 @@
+spring:
+  profiles:
+    #active: dev  # 表示启动开发环境的配置文件
+    active: test  # 表示启动测试环境的配置文件
+    #active: info  # 表示启动不同分组环境的配置文件

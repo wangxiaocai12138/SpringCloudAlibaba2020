@@ -4,6 +4,12 @@ server:
 spring:
   application:
     name: cloud-order-service
+  # 配置分布式链路追踪 地址 以及采集
+  zipkin:
+    base-url: http://localhost:9411
+  sleuth:
+    sampler:
+      probability: 1  # 采样率介于 0 - 1 之间，1 则表示全部采集
 eureka:
   client:
     #表示是否将自己注册进EurekaService服务注册中心中，默认true

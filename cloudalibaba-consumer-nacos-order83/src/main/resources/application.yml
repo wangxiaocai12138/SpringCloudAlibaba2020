@@ -1,0 +1,15 @@
+server:
+  port: 83
+
+spring:
+  application:
+    name: nacos-payment-consumer
+  # nacos 配置 (把服务注册到8848下)
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848 # 配置nacos地址
+
+#消费总将要去访问微服务的服务名称（注册成功进nacos的微服务提供者）
+service-url:
+  nacos-user-service: http://nacos-payment-provider #可以不写，建议写，用于配置与代码分离
