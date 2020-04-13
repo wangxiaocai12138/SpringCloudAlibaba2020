@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 public class RateLimitController {
 
-    @GetMapping("/byResource")
+        @GetMapping("/byResource")
     @SentinelResource(value = "byResource",blockHandler = "handleException")
     public CommonResult byResource(){
         return new CommonResult(200,"按资源名称限流测试ok，",new Payment(2020L,"serial001"));
